@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>org.example</groupId>
+    <artifactId>javase_practice_20210118</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <!-- 配置maven的编译插件 -->
+    <build>
+        <plugins>
+            <!--JDK编译插件 -->
+            <plugin>
+                <!--插件坐标 -->
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.2</version>
+                <!-- -->
+                <configuration>
+                    <!-- 源代码使用JDK版本-->
+                    <source>1.7</source>
+                    <!-- 源代码编译为class文件的版本，要保持跟上面版本一致-->
+                    <target>1.7</target>
+                    <encoding>UTF-8</encoding>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+
+
+
+
+</project>
