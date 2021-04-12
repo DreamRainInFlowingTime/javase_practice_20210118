@@ -4,6 +4,10 @@ package org.example.throwable;
  * 这个类主要看见异常栈的输出。
  */
 public class ThrowableTest {
+    protected int a = 1;
+    int b = 2;
+    protected static int c = 1;
+
     static void a() throws Exception {
         System.out.println("aaa");
         b();
@@ -22,12 +26,15 @@ public class ThrowableTest {
         }
         e();
     }
-    static void d(){
+    public static void d(){
         System.out.println("ddd");
     }
     static void e(){
         System.out.println("eee");
     }
+
+
+
     public static void main(String[] args)   {
         new ThrowableTest();
         System.out.println("555");

@@ -14,11 +14,6 @@ public class Test {
         System.out.printf("333");
     }
 
-    public static void main(String[] args) {
-        System.out.printf(new Test().a+"");
-        System.out.printf("222\n");
-        System.out.println(b+"");
-    }
 
 
 }
