@@ -8,7 +8,7 @@ import org.example.throwable.ThrowableTest;
  * 3、父类有main子类不写main可以运行，说明子类继承了。
  * 4、静态方法不可以被重写。
  * 5、super和this不能调用静态方法，奇怪啊,实际是可以的，只是idea没提示。
- * 6、关于静态方法不能被重写到底是缺陷还是优点?
+ * 6、关于静态方法不能被重写到底是缺陷还是优点?没弄明白。。。
  *
  */
 public class Dad extends ThrowableTest {
