@@ -9,11 +9,13 @@ import org.example.throwable.ThrowableTest;
  * 4、静态方法不可以被重写。
  * 5、super和this不能调用静态方法，奇怪啊,实际是可以的，只是idea没提示。
  * 6、关于静态方法不能被重写到底是缺陷还是优点?没弄明白。。。
+ * 7、关于子类和父类互相转换的问题
  *
  */
 public class Dad extends ThrowableTest {
     private int a = 1;
     int b = 2;
+
 
     public Dad() {
         System.out.printf(a+"");
@@ -33,7 +35,17 @@ public class Dad extends ThrowableTest {
 
     public static void main(String[] args) {
         Dad dad = new Dad();
-        dad.superTestStatic();
+        ThrowableTest th = (ThrowableTest)dad;
+        ThrowableTest th1 = new ThrowableTest();
+        ThrowableTest th2 = new Dad();
+
+        //instanceof应该就是这时候用吧
+        if(th2 instanceof Dad){
+            Dad dad1 = (Dad)th2;
+            System.out.println("xxx");
+        }
+
+
     }
 
 

@@ -4,6 +4,8 @@ package org.example.throwable;
  * 这个类主要看见异常栈的输出。
  */
 public class ThrowableTest {
+
+
     protected int a = 1;
     int b = 2;
     protected static int c = 1;
