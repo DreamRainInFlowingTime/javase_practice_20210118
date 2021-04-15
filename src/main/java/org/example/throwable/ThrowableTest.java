@@ -1,5 +1,7 @@
 package org.example.throwable;
 
+import java.lang.reflect.InvocationTargetException;
+
 /**
  * 这个类主要看见异常栈的输出。
  */
@@ -37,7 +39,7 @@ public class ThrowableTest {
 
 
 
-    public static void main(String[] args)   {
+    public static void main(String[] args) {
         new ThrowableTest();
         System.out.println("555");
         try {
@@ -46,6 +48,7 @@ public class ThrowableTest {
             e.printStackTrace();
         }
         System.out.println("final");
+       // InvocationTargetException
 
 
     }

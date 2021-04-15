@@ -1,0 +1,11 @@
+<component name="ArtifactManager">
+  <artifact type="jar" build-on-make="true" name="javase_practice">
+    <output-path>$PROJECT_DIR$/out/artifacts/javase_practice</output-path>
+    <root id="archive" name="javase_practice.jar">
+      <element id="directory" name="META-INF">
+        <element id="file-copy" path="$PROJECT_DIR$/META-INF/MANIFEST.MF" />
+      </element>
+      <element id="module-output" name="javase_practice_20210118" />
+    </root>
+  </artifact>
+</component>
