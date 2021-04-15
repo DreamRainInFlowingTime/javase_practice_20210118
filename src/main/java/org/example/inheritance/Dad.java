@@ -14,29 +14,41 @@ import org.example.throwable.ThrowableTest;
  */
 public class Dad extends ThrowableTest {
     private int a = 1;
+
     int b = 2;
+    String c = super.same;
+    Dad dad = this;
+
+    public String same = "Dad";
 
 
     public Dad() {
+        this("1");
         System.out.printf(a+"");
         this.a = 3;
+    }
+    public Dad(String x){
+        super(2);
+
+
     }
 
     public void superTest(){
         System.out.printf("", super.a);
         ThrowableTest.d();
         ThrowableTest.d();
-
-
-
     }
     static void superTestStatic(){
+    }
+
+    public void Same(){
+        System.out.println("i am Dad");
     }
 
     public static void main(String[] args) {
         Dad dad = new Dad();
         ThrowableTest th = (ThrowableTest)dad;
-        ThrowableTest th1 = new ThrowableTest();
+        ThrowableTest th1 = new ThrowableTest(1);
         ThrowableTest th2 = new Dad();
 
         //instanceof应该就是这时候用吧

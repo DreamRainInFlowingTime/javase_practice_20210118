@@ -6,4 +6,5 @@ package org.example.abstractclass;
 public abstract class AbstractTest {
     public abstract void test();
 
+     abstract void a();
 }
