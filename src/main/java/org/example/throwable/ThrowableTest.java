@@ -19,6 +19,11 @@ public class ThrowableTest {
         this.a = a;
     }
 
+    private ThrowableTest(int a, int b) {
+        this.a = a;
+        this.b = b;
+    }
+
     static void a()    {
         System.out.println("aaa");
         b();
