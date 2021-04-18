@@ -58,8 +58,16 @@ public class LocalVarGCTest {
      * [Full GC (System.gc())  10780K->540K(123904K), 0.0029822 secs]
      */
     public static void localVarGC5() {
-        localVarGC1();
-        System.gc();
+        try {
+            System.out.printf("111");
+            localVarGC1();
+            System.gc();
+        }catch (Error e){
+            e.printStackTrace();
+        }
+        new LocalVarGCTest();
+        System.out.printf("222");
+
     }
 }
 

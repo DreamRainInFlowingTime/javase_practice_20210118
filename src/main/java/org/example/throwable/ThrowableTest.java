@@ -1,6 +1,7 @@
 package org.example.throwable;
 
 import java.lang.reflect.InvocationTargetException;
+import java.net.SocketException;
 
 /**
  * 这个类主要看见异常栈的输出。
@@ -54,6 +55,14 @@ public class ThrowableTest {
     public void Same(){
         System.out.println("i am ThrowableTest");
     }
+    public void ThrowableAlone() throws Exception{
+        System.out.println("i am yeye");
+        try {
+            throw new SocketException();
+        }catch (SocketException e ){
+            e.printStackTrace();
+        }
+    }
 
 
 
@@ -66,8 +75,7 @@ public class ThrowableTest {
             e.printStackTrace();
 
         }
-
-
+        //a();
 
         System.out.println("final");
        // InvocationTargetException

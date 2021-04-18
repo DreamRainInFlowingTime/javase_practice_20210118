@@ -20,6 +20,11 @@ public class Dad extends ThrowableTest {
     Dad dad = this;
 
     public String same = "Dad";
+    private final int xx;
+    {
+        this.xx = 2;
+
+    }
 
 
     public Dad() {
@@ -29,9 +34,8 @@ public class Dad extends ThrowableTest {
     }
     public Dad(String x){
         super(2);
-
-
     }
+
 
     public void superTest(){
         System.out.printf("", super.a);
@@ -46,10 +50,10 @@ public class Dad extends ThrowableTest {
     }
 
     public static void main(String[] args) {
-        Dad dad = new Dad();
+        Dad dad = new Dad("1");
         ThrowableTest th = (ThrowableTest)dad;
         ThrowableTest th1 = new ThrowableTest(1);
-        ThrowableTest th2 = new Dad();
+        ThrowableTest th2 = new Dad("1");
 
         //instanceof应该就是这时候用吧
         if(th2 instanceof Dad){
