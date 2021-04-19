@@ -8,4 +8,32 @@ package org.example.innerclass;
  *  静态内部类
  */
 public class InnerClassTest {
+
+    /**
+     * 成员内部类
+     */
+    class MemberInnerClass {
+
+    }
+
+    /**
+     * 方法内部类
+     */
+    void test(){
+        class MethodInnerClass {
+
+        }
+    }
+
+    /**
+     * 匿名内部类
+     */
+
+
+
+    /**
+     * 静态内部类
+     */
+
+
 }
