@@ -11,6 +11,7 @@ package org.example.innerclass;
 public class InnerClassTest {
     int a = 1;
     String  b = "2";
+    static int x = 1;
 
     /**
      * 成员内部类
@@ -33,6 +34,7 @@ public class InnerClassTest {
 
         }
 
+
         /**
          * 匿名内部类
          */
@@ -53,43 +55,13 @@ public class InnerClassTest {
 
     }
 
-    public static void main(String[] args) {
-        new InnerClassTest().new MemberInnerClass().test();
-    }
-
-
-
-    /**
-     * 成员内部类
-     */
-    class MemberInnerClass {
-
-    }
-
-    /**
-     * 方法内部类
-     */
-    void test(){
-        class MethodInnerClass {
-
-        }
-    }
-
-    /**
-     * 匿名内部类
-     */
-
-
-
-    /**
-     * 静态内部类
-     */
 
     public static void main(String[] args) throws InterruptedException {
-        while(true){
+       // InnerClassTest.StaticInnerClass()
+/*        while(true){
             System.out.println("1");
             Thread.sleep(1000);
-        }
+        }*/
     }
 
 }
