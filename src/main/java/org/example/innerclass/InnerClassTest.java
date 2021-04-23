@@ -29,17 +29,22 @@ public class InnerClassTest {
     /**
      * 方法内部类
      */
-    void test(){
+    void test(String p){
         class MethodInnerClass {
 
         }
-
-
         /**
          * 匿名内部类
+         * ?原来不是形参可以不是final么
          */
         new InnerClassTest(){
-            void InnerMethod(){
+            {
+                a = 5;
+                b = "4";
+                b = "3";
+                System.out.println(InnerClassTest.this.b);
+                System.out.println(a);
+                System.out.println(p);
 
             }
         };
@@ -52,6 +57,10 @@ public class InnerClassTest {
      */
 
     static class StaticInnerClass{
+        static int a = 9;
+        void test(){
+
+        }
 
     }
 
@@ -62,6 +71,8 @@ public class InnerClassTest {
             System.out.println("1");
             Thread.sleep(1000);
         }*/
+        new InnerClassTest.StaticInnerClass().test();
+        int a = new InnerClassTest.StaticInnerClass().a;
     }
 
 }
