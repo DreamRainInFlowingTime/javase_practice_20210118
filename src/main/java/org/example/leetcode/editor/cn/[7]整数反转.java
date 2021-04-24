@@ -50,7 +50,7 @@ import java.util.ArrayList;
 //leetcode submit region begin(Prohibit modification and deletion)
 class Solution {
     public int reverse(int x) {
-        String a = Math.abs(x) + "";
+/*        String a = Math.abs(x) + "";
         int b;
         try {
             b = Integer.parseInt(new StringBuffer(a).reverse().toString());
@@ -58,16 +58,24 @@ class Solution {
             System.out.println("环境存不了64位的");
             return 0;
         }
-        return  x < 0 ? (int)-b : (int)b;
+        return  x < 0 ? (int)-b : (int)b;*/
 
-/*        if (x < 0 && Integer.MIN_VALUE <= (-b)) {
-            return (int)-b;
-        } else if (x > 0 && b <= Integer.MAX_VALUE) {
-            return (int)b;
-        } else {
-            return 0;
-        }*/
-    }
+            int rev = 0;
+            while (x != 0) {
+                int pop = x % 10;
+                x /= 10;
+/*              if (rev > 0 && rev > (Integer.MAX_VALUE - pop)/10) return 0;
+                if (rev < 0 && rev < (Integer.MIN_VALUE - pop)/10) return 0;*/
+                if (rev > Integer.MAX_VALUE/10 || (rev == Integer.MAX_VALUE / 10 && pop > 7)) return 0;
+                if (rev < Integer.MIN_VALUE/10 || (rev == Integer.MIN_VALUE / 10 && pop < -8)) return 0;
+
+
+                rev = pop + rev * 10;
+
+            }
+            return rev;
+        }
 }
+
 
 //leetcode submit region end(Prohibit modification and deletion)
