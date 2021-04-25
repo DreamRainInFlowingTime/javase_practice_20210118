@@ -48,7 +48,7 @@ package org.example.leetcode.editor.cn;
 import java.util.ArrayList;
 
 //leetcode submit region begin(Prohibit modification and deletion)
-class Solution {
+class Solution2 {
     public int reverse(int x) {
 /*        String a = Math.abs(x) + "";
         int b;
