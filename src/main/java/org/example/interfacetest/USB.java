@@ -1,7 +1,7 @@
 package org.example.interfacetest;
 
 public interface USB {
-    default void a(){
+     default void a(){
 
     }
 
