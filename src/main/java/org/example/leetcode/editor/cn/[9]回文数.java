@@ -53,7 +53,7 @@ package org.example.leetcode.editor.cn;
 //leetcode submit region begin(Prohibit modification and deletion)
 class Solution3 {
     public boolean isPalindrome(int x) {
-       String x1 = x+"";
+       String x1 = String.valueOf(x);
        return  new StringBuffer(x1).reverse().toString().equals(x1) ? true : false;
 
 

@@ -39,10 +39,22 @@
 
     <loggers>
         <asyncRoot level="info">
-            <!--根据配置文件是否打开 console输出 -->
             <appender-ref ref="Console"/>
             <appender-ref ref="rootAppeder"/>
             <appender-ref ref="errorAppeder"/>
         </asyncRoot>
+<!--        <Logger   level="info" additivity="false">
+            <appender-ref ref="Console"/>
+            <appender-ref ref="rootAppeder"/>
+            <appender-ref ref="errorAppeder"/>
+        </Logger>-->
+
+<!--        <Root level="info">
+            &lt;!&ndash;根据配置文件是否打开 console输出 &ndash;&gt;
+            <appender-ref ref="Console"/>
+            <appender-ref ref="rootAppeder"/>
+            <appender-ref ref="errorAppeder"/>
+        </Root>-->
+
     </loggers>
 </configuration>

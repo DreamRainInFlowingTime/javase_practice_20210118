@@ -77,7 +77,7 @@
 package org.example.leetcode.editor.cn;
 
 //leetcode submit region begin(Prohibit modification and deletion)
-class Solution {
+class Solution4 {
     public int romanToInt(String s) {
         char a[] = s.toCharArray();
         int num = 0;
