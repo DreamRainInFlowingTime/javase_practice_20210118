@@ -1,6 +1,5 @@
 package org.example.throwable;
 
-import java.lang.reflect.InvocationTargetException;
 import java.net.SocketException;
 
 /**
@@ -25,15 +24,15 @@ public class ThrowableTest {
         this.b = b;
     }
 
-    static void a()    {
+    static void a()  throws Exception  {
         System.out.println("aaa");
         b();
     }
-    static void b()  {
+    static void b() throws Exception {
         System.out.println("bbb");
         c();
     }
-    static void c()   {
+    static void c() throws Exception  {
         System.out.println("ccc");
         try {
             d();
@@ -75,7 +74,7 @@ public class ThrowableTest {
             e.printStackTrace();
 
         }
-        //a();
+        a();
 
         System.out.println("final");
        // InvocationTargetException

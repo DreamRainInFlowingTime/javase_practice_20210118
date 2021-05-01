@@ -11,11 +11,15 @@ import org.example.throwable.ThrowableTest;
 public class Polymorphism {
     ThrowableTest th = new Dad("1");
 
-
     public static void main(String[] args) {
         Polymorphism po = new Polymorphism();
         System.out.println(po.th.same);
+        Dad dad = new Dad();
         po.th.Same();
+
+
+
+        String s = new String();
     }
 
 }

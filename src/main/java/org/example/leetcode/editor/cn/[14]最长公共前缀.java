@@ -33,7 +33,7 @@
 package org.example.leetcode.editor.cn;
 
 //leetcode submit region begin(Prohibit modification and deletion)
-class Solution {
+class Solution5 {
     public String longestCommonPrefix(String[] strs) {
         char[] chars = strs[0].toCharArray();
         int index=0;

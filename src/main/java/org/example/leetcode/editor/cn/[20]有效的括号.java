@@ -62,7 +62,7 @@ import java.util.Map;
 import java.util.Stack;
 
 //leetcode submit region begin(Prohibit modification and deletion)
-class Solution {
+class Solution6 {
     public boolean isValid(String s) {
         char[] chars = s.toCharArray();
         Stack stack = new Stack();
