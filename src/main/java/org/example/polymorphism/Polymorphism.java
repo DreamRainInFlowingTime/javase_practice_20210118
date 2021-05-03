@@ -3,6 +3,8 @@ package org.example.polymorphism;
 import org.example.inheritance.Dad;
 import org.example.throwable.ThrowableTest;
 
+import java.util.HashMap;
+
 /**
  * 属性优先父类
  * 方法优先子类
@@ -16,6 +18,7 @@ public class Polymorphism {
         System.out.println(po.th.same);
         Dad dad = new Dad();
         po.th.Same();
+        new HashMap();
 
 
 

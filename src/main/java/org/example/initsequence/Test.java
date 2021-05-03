@@ -2,6 +2,7 @@ package org.example.initsequence;
 
 /**
  * 构造函数执行顺序验证
+ * （初始化顺序？）
  *
  */
 public class Test {

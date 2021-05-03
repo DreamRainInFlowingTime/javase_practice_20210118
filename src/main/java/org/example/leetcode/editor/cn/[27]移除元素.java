@@ -62,7 +62,7 @@ package org.example.leetcode.editor.cn;
 import java.util.Arrays;
 
 //leetcode submit region begin(Prohibit modification and deletion)
-class Solution {
+class Solution7 {
     public int removeElement(int[] nums, int val) {
         int length = nums.length;
         for (int i = 0; i < nums.length; i++) {
