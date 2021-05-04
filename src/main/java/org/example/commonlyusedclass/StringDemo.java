@@ -19,8 +19,13 @@ public class StringDemo {
 
         }*/
 
-
-
+        System.out.println(a.codePointAt(3));
+        System.out.println((char)('b'+'a'));
+        System.out.println((char) a.codePointBefore(3));
+        System.out.println(a.compareTo("zsaf"));
+        String chara = String.copyValueOf(new char[]{'a', 'b', 'c'});
+        System.out.println(chara);
+        a.toLowerCase();
 
 
     }
