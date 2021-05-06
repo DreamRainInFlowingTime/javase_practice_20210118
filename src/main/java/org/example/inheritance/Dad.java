@@ -14,8 +14,10 @@ import org.example.throwable.ThrowableTest;
  */
 public class Dad extends ThrowableTest {
     private int a = 1;
-
-    int b = 2;
+    /**
+     * 测试多态的
+     */
+    public int b = 7;
     String c = super.same;
     Dad dad = this;
 

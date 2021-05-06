@@ -33,7 +33,7 @@ package org.example.leetcode.editor.cn;
 import java.util.Arrays;
 
 //leetcode submit region begin(Prohibit modification and deletion)
-class Solution {
+class Solution9 {
     public int searchInsert(int[] nums, int target) {
         int temp = Arrays.binarySearch(nums,target);
         if (temp < 0) {

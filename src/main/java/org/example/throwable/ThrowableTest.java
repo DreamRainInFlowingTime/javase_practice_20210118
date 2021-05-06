@@ -10,7 +10,7 @@ import java.net.SocketException;
  */
 public class ThrowableTest {
     protected int a = 1;
-    int b = 2;
+    public int b = 2;
     protected static int c = 1;
     private int  o = 3;
     public String same = "ThrowableTest";

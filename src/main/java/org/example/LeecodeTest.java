@@ -27,8 +27,16 @@ public class LeecodeTest {
            // System.out.println(s);
         }
         //System.out.println(a.startsWith("as", 2));
-        System.out.println(isValid("()"));
-
+        //System.out.println(isValid("()"));
+        int[] ints = {1, 2, 3};
+        String intsa = Arrays.toString(ints);
+        intsa=intsa.replaceAll("\\[|\\]|,| ","");
+        Integer integer = Integer.parseInt(intsa)+1;
+        intsa =Integer.toString(integer);
+        for (int i = 0; i < ints.length; i++) {
+            ints[i]=Character.getNumericValue(intsa.charAt(i));
+        }
+        System.out.println("-----"+Arrays.toString(ints));
 
 
     }
