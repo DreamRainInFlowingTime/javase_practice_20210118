@@ -5,15 +5,14 @@ package org.example.commonlyusedclass;
  *
  */
 public enum EnumDemo {
+
     Constants_A("a"),Constants_B("b"),Constants_C("c");
     EnumDemo(String a) {
 
     }
 
     void show(){
-        System.out.println("a");
+        name();
+        values();
     }
-
-
-
 }

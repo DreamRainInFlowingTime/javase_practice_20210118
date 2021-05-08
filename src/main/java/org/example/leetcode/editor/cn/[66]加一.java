@@ -47,7 +47,7 @@ import org.example.Array;
 import java.util.Arrays;
 
 //leetcode submit region begin(Prohibit modification and deletion)
-class Solution {
+class Solution10 {
     public int[] plusOne(int[] digits) {
         /**
          * 方法三

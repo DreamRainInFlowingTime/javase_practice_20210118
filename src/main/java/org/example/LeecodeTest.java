@@ -1,42 +1,22 @@
 package org.example;
 
+
 import java.util.*;
 
 public class LeecodeTest {
     public static void main(String[] args) {
-        //System.out.println((-205)%10);
-        String a = "a{s}d[f]a(sd)f";
-        System.out.println(a.toCharArray()[2]);
-        System.out.println(a.toCharArray().toString());
-        for (char c : a.toCharArray()) {
-            System.out.print(c);
-        }
-        List list = Arrays.asList(a.toCharArray());
-        for (Object o : list) {
-            System.out.print(o.toString());
-        }
-        Collections.sort(list);
-        for (Object o : list) {
-            System.out.print(o.toString());
-        }
+        ListNode l1 = new LeecodeTest().new ListNode(1);
+        l1.next= new LeecodeTest().new ListNode(2);
+        l1.next.next = new LeecodeTest().new ListNode(4);
+        ListNode l2 = new LeecodeTest().new ListNode(1);
+        l2.next= new LeecodeTest().new ListNode(3);
+        l2.next.next = new LeecodeTest().new ListNode(4);
+        ListNode resutl = mergeTwoLists(l1,l2);
+        while (resutl != null){
+            System.out.println(resutl.val);
+            resutl =  resutl.next;
 
-
-        //System.out.println(a.replace("()","o"));
-        String b[] = a.split("as");
-        for (String s : b) {
-           // System.out.println(s);
         }
-        //System.out.println(a.startsWith("as", 2));
-        //System.out.println(isValid("()"));
-        int[] ints = {1, 2, 3};
-        String intsa = Arrays.toString(ints);
-        intsa=intsa.replaceAll("\\[|\\]|,| ","");
-        Integer integer = Integer.parseInt(intsa)+1;
-        intsa =Integer.toString(integer);
-        for (int i = 0; i < ints.length; i++) {
-            ints[i]=Character.getNumericValue(intsa.charAt(i));
-        }
-        System.out.println("-----"+Arrays.toString(ints));
 
 
     }
@@ -60,5 +40,45 @@ public class LeecodeTest {
         }
         return true;
     }
+
+    public static ListNode mergeTwoLists(ListNode l1, ListNode l2) {
+        if (l1.next == null) return l2;
+        else if (l2.next == null) return l1;
+        ListNode pre;
+        ListNode temp;
+
+        if (l1.val > l2.val) {
+            pre = l2;
+            l2 = l2.next;
+        }
+        else {
+            pre = l1;
+            l1=l1.next;
+        }
+        temp = pre;
+        while (l1 != null && l2 != null){
+            if (l1.val > l2.val) {
+                temp.next = l2;
+                temp  = temp.next;
+                l2 = l2.next;
+            }else {
+                temp.next = l1;
+                temp  = temp.next;
+                l1=l1.next;
+            }
+        }
+        temp.next = l1 == null ? l2 : l1;
+        return pre;
+    }
+
+    public class ListNode {
+        int val;
+        ListNode next;
+        ListNode() {}
+        ListNode(int val) { this.val = val; }
+        ListNode(int val, ListNode next) { this.val = val; this.next = next; }
+    }
+
+
 }
 
