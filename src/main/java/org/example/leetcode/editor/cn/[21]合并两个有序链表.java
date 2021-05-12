@@ -49,7 +49,7 @@
  */
 package org.example.leetcode.editor.cn;
 
-class Solution {
+class Solution11 {
     public ListNode mergeTwoLists(ListNode l1, ListNode l2) {
         if (l1.next == null) return l2;
         else if (l2.next == null) return l1;
