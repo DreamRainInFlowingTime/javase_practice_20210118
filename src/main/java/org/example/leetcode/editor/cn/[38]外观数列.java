@@ -70,7 +70,7 @@ package org.example.leetcode.editor.cn;
 class Solution {
     public String countAndSay(int n) {
         if (n == 1) return "1";
-        StringBuilder sb = new StringBuilder();
+        StringBuffer sb = new StringBuffer();
         String sn = String.valueOf(countAndSay(n-1));
         int count = 0;
         String temp = "";
@@ -86,7 +86,7 @@ class Solution {
                 }
             }
             if (sn.charAt(i) == sn.charAt(i+1)) {
-                if(temp != "")temp = String.valueOf(sn.charAt(i));
+                if(temp == "")temp = String.valueOf(sn.charAt(i));
                 count++;
             }else {
                 if (count != 0 ) {
