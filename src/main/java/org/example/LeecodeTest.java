@@ -24,7 +24,13 @@ public class LeecodeTest {
         /**
          * 外观序列调试
          */
-        System.out.println(countAndSay(4));
+        long startTime=System.currentTimeMillis();//获取开始时间
+        //countAndSay(70) 70(13802,2->17307)
+        countAndSay2(100);
+        long endTime=System.currentTimeMillis(); //获取结束时间
+        System.out.println("程序运行时间： "+(endTime-startTime)+"ms");
+
+
 
 
     }
@@ -120,8 +126,48 @@ public class LeecodeTest {
             }
         }
         return sb.toString();
-
     }
+
+    public static String countAndSay2(int n) {
+        if (n == 1) return "1";
+
+        //String sn = String.valueOf(countAndSay(n - 1));
+        String sn = "1";
+        int count = 0;
+        String temp = "";
+        StringBuilder sb = new StringBuilder();
+        for (int j = 2; j <= n; j++) {
+            sb.setLength(0);
+            System.out.println(sb.length());
+            count = 0;
+            temp = "";
+            for (int i = 0; i < sn.length() - 1; i++) {
+                if (sn.charAt(i) == sn.charAt(i + 1)) {
+                    if (temp == "") temp = String.valueOf(sn.charAt(i));
+                    count++;
+                } else {
+                    if (count != 0) {
+                        count++;
+                        sb.append(count).append(temp);
+                        temp = "";
+                        count = 0;
+                    } else {
+                        sb.append("1").append(sn.charAt(i));
+                    }
+                }
+            }
+            if (count != 0) {
+                count++;
+                sb.append(count).append(temp);
+            } else {
+                sb.append("1").append(sn.charAt(sn.length() - 1));
+            }
+            sn = sb.toString();
+        }
+
+        return sn;
+    }
+
 
 
 }
