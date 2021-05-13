@@ -37,52 +37,78 @@
 
 
 //leetcode submit region begin(Prohibit modification and deletion)
+
 /**
  * Definition for singly-linked list.
  * public class ListNode {
- *     int val;
- *     ListNode next;
- *     ListNode() {}
- *     ListNode(int val) { this.val = val; }
- *     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
+ * int val;
+ * ListNode next;
+ * ListNode() {}
+ * ListNode(int val) { this.val = val; }
+ * ListNode(int val, ListNode next) { this.val = val; this.next = next; }
  * }
  */
-package org.example.leetcode.editor.cn;
+//package org.example.leetcode.editor.cn;
 
 class Solution {
     public ListNode mergeTwoLists(ListNode l1, ListNode l2) {
-        if (l1.next == null) return l2;
-        else if (l2.next == null) return l1;
+        if (l1 == null) return l2;
+        if (l2 == null) return l1;
+
         ListNode pre;
         ListNode temp;
-
+        pre = l1;
         if (l1.val > l2.val) {
             pre = l2;
             l2 = l2.next;
-        }
-        else {
+        } else {
             pre = l1;
-            l1=l1.next;
+            l1 = l1.next;
         }
         temp = pre;
-        while (l1.next != null || l2.next != null){
+        while (l1 != null && l2 != null) {
             if (l1.val > l2.val) {
                 temp.next = l2;
+                temp = temp.next;
                 l2 = l2.next;
-            }else {
+            } else {
                 temp.next = l1;
-                l1=l1.next;
+                temp = temp.next;
+                l1 = l1.next;
             }
         }
+        temp.next = l1 == null ? l2 : l1;
         return pre;
+        /**
+         * 试试递归
+         */
+/*        if (l1.val != null && l2.val != null) {
+            if (l1.val > l2.val) {
+
+            }
+
+
+        }*/
+
+
     }
+
 
     public class ListNode {
         int val;
         ListNode next;
-        ListNode() {}
-        ListNode(int val) { this.val = val; }
-        ListNode(int val, ListNode next) { this.val = val; this.next = next; }
+
+        ListNode() {
+        }
+
+        ListNode(int val) {
+            this.val = val;
+        }
+
+        ListNode(int val, ListNode next) {
+            this.val = val;
+            this.next = next;
+        }
     }
 }
 //leetcode submit region end(Prohibit modification and deletion)
