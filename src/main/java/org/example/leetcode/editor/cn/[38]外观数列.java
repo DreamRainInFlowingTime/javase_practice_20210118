@@ -71,35 +71,33 @@ class Solution {
     public String countAndSay(int n) {
         if (n == 1) return "1";
         StringBuilder sb = new StringBuilder();
-        String sn = String.valueOf(countAndSay(n-1));
+        String sn = String.valueOf(countAndSay(n - 1));
         int count = 0;
         String temp = "";
-        for (int i = 0; i < sn.length(); i++) {
-            if (i == sn.length()-1){
-                if (count != 0) {
-                    count++;
-                    sb.append(count).append(temp);
-                    continue;
-                }else {
-                    sb.append("1").append(sn.charAt(i));
-                    continue;
-                }
-            }
-            if (sn.charAt(i) == sn.charAt(i+1)) {
-                if(temp == "") temp = String.valueOf(sn.charAt(i));
+        for (int i = 0; i < sn.length() - 1; i++) {
+            if (sn.charAt(i) == sn.charAt(i + 1)) {
+                if (temp == "") temp = String.valueOf(sn.charAt(i));
                 count++;
-            }else {
-                if (count != 0 ) {
-                    count++;
-                    sb.append(count).append(temp);
-                    temp = "";
-                    count = 0;
-                }else {
-                    sb.append("1").append(sn.charAt(i));
-                }
+                continue;
+            }
+            if (count != 0) {
+                count++;
+                sb.append(count).append(temp);
+                temp = "";
+                count = 0;
+            } else {
+                sb.append("1").append(sn.charAt(i));
             }
         }
-        return sb.toString();    }
+
+        if (count != 0) {
+            count++;
+            sb.append(count).append(temp);
+        } else {
+            sb.append("1").append(sn.charAt(sn.length() - 1));
+        }
+        return sb.toString();
+    }
 
     /**
      * 迭代的效率比递归底，这tm合理么？？？？？？n=4的时候满3倍，n=70的时候只有不到1/2了，但是没法继续了，因为内存先不够了，就算这样这是tm
