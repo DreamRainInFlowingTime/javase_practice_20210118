@@ -5,7 +5,10 @@ import java.util.*;
 
 public class LeecodeTest {
     public static void main(String[] args) {
-        ListNode l1 = new LeecodeTest().new ListNode(1);
+        /**
+         *合并有序链表调试
+         */
+/*        ListNode l1 = new LeecodeTest().new ListNode(1);
         l1.next= new LeecodeTest().new ListNode(2);
         l1.next.next = new LeecodeTest().new ListNode(4);
         ListNode l2 = new LeecodeTest().new ListNode(1);
@@ -16,7 +19,12 @@ public class LeecodeTest {
             System.out.println(resutl.val);
             resutl =  resutl.next;
 
-        }
+        }*/
+
+        /**
+         * 外观序列调试
+         */
+        System.out.println(countAndSay(4));
 
 
     }
@@ -77,6 +85,42 @@ public class LeecodeTest {
         ListNode() {}
         ListNode(int val) { this.val = val; }
         ListNode(int val, ListNode next) { this.val = val; this.next = next; }
+    }
+
+
+    public static String countAndSay(int n) {
+        if (n == 1) return "1";
+        StringBuilder sb = new StringBuilder();
+        String sn = String.valueOf(countAndSay(n-1));
+        int count = 0;
+        String temp = "";
+        for (int i = 0; i < sn.length(); i++) {
+            if (i == sn.length()-1){
+                if (count != 0) {
+                    count++;
+                    sb.append(count).append(temp);
+                    continue;
+                }else {
+                    sb.append("1").append(sn.charAt(i));
+                    continue;
+                }
+            }
+            if (sn.charAt(i) == sn.charAt(i+1)) {
+                if(temp == "") temp = String.valueOf(sn.charAt(i));
+                count++;
+            }else {
+                if (count != 0 ) {
+                    count++;
+                    sb.append(count).append(temp);
+                    temp = "";
+                    count = 0;
+                }else {
+                    sb.append("1").append(sn.charAt(i));
+                }
+            }
+        }
+        return sb.toString();
+
     }
 
 
