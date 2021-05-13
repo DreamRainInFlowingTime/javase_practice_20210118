@@ -67,7 +67,7 @@
 package org.example.leetcode.editor.cn;
 
 //leetcode submit region begin(Prohibit modification and deletion)
-class Solution {
+class Solution12 {
     public String countAndSay(int n) {
         if (n == 1) return "1";
         StringBuilder sb = new StringBuilder();
@@ -89,7 +89,6 @@ class Solution {
                 sb.append("1").append(sn.charAt(i));
             }
         }
-
         if (count != 0) {
             count++;
             sb.append(count).append(temp);
