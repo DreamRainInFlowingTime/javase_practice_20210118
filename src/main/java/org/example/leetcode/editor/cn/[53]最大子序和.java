@@ -60,22 +60,31 @@ import java.util.Arrays;
 //leetcode submit region begin(Prohibit modification and deletion)
 class Solution {
     public int maxSubArray(int[] nums) {
-        /**
-         * 未完，待续
-         */
-        int temp = 0;
+/*      int temp = -100000;
         int result = 0;
         for (int i = 0; i < nums.length; i++) {
              result = 0;
             for (int j = i; j < nums.length; j++) {
-                result += nums[i];
-                if (result > temp ){
+                result += nums[j];
+                if (result >= temp ){
                     temp = result;
                 }
             }
         }
-        return temp;
-
+        return temp;*/
+        int pre = nums[0];
+        int max  = 0;
+        for (int num : nums) {
+            pre += num;
+            pre = Math.max(pre, num);
+            max = Math.max(max,pre);
+        }
+        return max;
     }
+
+/*    public static void main(String[] args) {
+        new Solution().maxSubArray(new int[]{-2, 1, -3, 4, -1, 2, 1, -5, 4});
+    }*/
 }
+
 //leetcode submit region end(Prohibit modification and deletion)
