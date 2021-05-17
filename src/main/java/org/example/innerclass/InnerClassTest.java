@@ -78,7 +78,9 @@ public class InnerClassTest {
             Thread.sleep(1000);
         }*/
         new InnerClassTest.StaticInnerClass("1").test();
+        //成员内部类（外部类需要实例化，内部类也需要）
         new InnerClassTest().new MemberInnerClass();
+        //静态内部类（只需要实例化内部类？）
         int a = new InnerClassTest.StaticInnerClass("2").a;
     }
 
