@@ -35,22 +35,16 @@ import static com.sun.org.apache.xml.internal.security.keys.keyresolver.KeyResol
 //leetcode submit region begin(Prohibit modification and deletion)
 class Solution {
     public int lengthOfLastWord(String s) {
+        //方式一：
 /*        String[] arrS = s.split(" ");
         return arrS.length == 0 ? 0 : arrS[arrS.length - 1].length();*/
-        char[]  chars = s.toCharArray();
-        StringBuilder sb = new StringBuilder();
-        int flag = 0;
-        for (int i = chars.length - 1; i >= 0; i--) {
-            if (chars[i] == ' ' && flag != 0){
-                break;
-            }
-            else {
-                flag = 1;
-                if (chars[i] == ' ') continue;
-                sb.append(chars[i]);
-            }
+        //方式二：速度100%，内存97%，接近perfect
+        int sum = 0;
+        for (int i = s.length() - 1; i >= 0; i--) {
+            if (s.charAt(i) != ' ') sum += 1;
+            else if(sum != 0) break;
         }
-        return flag == 0 ? 0 : sb.length();
+        return sum;
     }
 }
 //leetcode submit region end(Prohibit modification and deletion)
