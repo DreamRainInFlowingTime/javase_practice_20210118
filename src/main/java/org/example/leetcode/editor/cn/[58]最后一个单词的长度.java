@@ -30,10 +30,10 @@
 // 👍 313 👎 0
 
 
-import static com.sun.org.apache.xml.internal.security.keys.keyresolver.KeyResolver.length;
+package org.example.leetcode.editor.cn;
 
 //leetcode submit region begin(Prohibit modification and deletion)
-class Solution {
+class Solution14 {
     public int lengthOfLastWord(String s) {
         //方式一：
 /*        String[] arrS = s.split(" ");

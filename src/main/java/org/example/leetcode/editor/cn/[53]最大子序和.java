@@ -58,7 +58,7 @@ package org.example.leetcode.editor.cn;
 import java.util.Arrays;
 
 //leetcode submit region begin(Prohibit modification and deletion)
-class Solution {
+class Solution13 {
     public int maxSubArray(int[] nums) {
 /*      int temp = -100000;
         int result = 0;
