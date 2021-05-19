@@ -29,39 +29,48 @@ package org.example.leetcode.editor.cn;
 
 
 //leetcode submit region begin(Prohibit modification and deletion)
-class Solution {
+class Solution11 {
     public String addBinary(String a, String b) {
-      //方式一：
-        int aLength = a.length() - 1;
-        int bLength = b.length() - 1;
+        //方式一(改进) 时间98%,内存76%：
+        int aLength = a.length() - 1, bLength = b.length() - 1,tempSum = 0;
         StringBuilder sb = new StringBuilder();
-        int temp = 0;
-        int tempSum = 0;
         while (aLength >= 0 || bLength >= 0) {
-            if (aLength < 0)tempSum = Character.getNumericValue(b.charAt(bLength));
-            else if (bLength < 0)tempSum = Character.getNumericValue(a.charAt(aLength));
-            else tempSum = Character.getNumericValue(b.charAt(bLength)) + Character.getNumericValue(a.charAt(aLength));
-            if (tempSum + temp == 2) {
-                sb.insert(0, "0");
-                temp = 1;
-            } else if (tempSum + temp == 3) {
-                sb.insert(0, "1");
-                temp = 1;
-            } else {
-                sb.insert(0, tempSum + temp);
-                temp = 0;
-            }
-            aLength--;
-            bLength--;
+            if (aLength < 0) tempSum += b.charAt(bLength) - '0';
+            else if (bLength < 0) tempSum += a.charAt(aLength) - '0';
+            else tempSum += b.charAt(bLength) + a.charAt(aLength) - 2 * '0';
+            sb.append((tempSum) % 2);
+            tempSum = tempSum / 2;
+            aLength--;bLength--;
         }
-        if (temp != 0) sb.insert(0,temp);
+        if (tempSum != 0) sb.append(tempSum); //sb.insert(0,temp);
+        sb.reverse();
         return sb.toString();
-
     }
 
+    /*if (aLength < 0)tempSum = Character.getNumericValue(b.charAt(bLength));
+else if (bLength < 0)tempSum = Character.getNumericValue(a.charAt(aLength));
+else tempSum = Character.getNumericValue(b.charAt(bLength)) + Character.getNumericValue(a.charAt(aLength));*/
+    /*            if (tempSum + temp == 2) {
+                    sb.insert(0, "0");
+                    temp = 1;
+                } else if (tempSum + temp == 3) {
+                    sb.insert(0, "1");
+                    temp = 1;
+                } else {
+                    sb.insert(0, tempSum + temp);
+                    temp = 0;
+                }*/
+
+    //int sum = tempSum + temp;//sb.insert(0,(sum) % 2);
+    //tempSum = tempSum + temp;
+    //int temp = 0,
     public static void main(String[] args) {
         //System.out.println(new Solution().addBinary("11", "1"));
         System.out.println(Integer.highestOneBit(14));
+        char x = '1';
+        char b = '1';
+
+        System.out.println(x + b - '0' - '0');
     }
 }
 //leetcode submit region end(Prohibit modification and deletion)
