@@ -20,6 +20,7 @@
 // Related Topics 数学 二分查找 
 // 👍 680 👎 0
 
+package org.example.leetcode.editor.cn;
 
 //leetcode submit region begin(Prohibit modification and deletion)
 class Solution {
@@ -32,6 +33,7 @@ class Solution {
         }
         return 0;
     }*/
+    }
 
     public static void main(String[] args) {
        // System.out.println(2147483647);
