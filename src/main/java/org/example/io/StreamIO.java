@@ -7,18 +7,19 @@ import java.util.Arrays;
 
 public class StreamIO {
     public static void main(String[] args) {
-/*        try {
+        try {
             //OutputStream outputStream = new FileOutputStream("aaa");
             //outputStream.write(-1);
             //char a = -1;
             Writer writer = new FileWriter("aaa");
-            writer.write(-1);
+            writer.write("-1");
             writer.flush();
+            System.out.println(writer);
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
-        }*/
+        }
         try {
             InputStream inputStream = new FileInputStream("aaa");
             //byte[] b = new byte[1024];
