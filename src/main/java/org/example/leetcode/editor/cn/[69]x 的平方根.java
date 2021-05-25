@@ -23,7 +23,7 @@
 package org.example.leetcode.editor.cn;
 
 //leetcode submit region begin(Prohibit modification and deletion)
-class Solution {
+class Solution15 {
     public int mySqrt(int x) {
         return (int) Math.sqrt(x);
 /*        long x1 = x;
@@ -37,7 +37,7 @@ class Solution {
 
     public static void main(String[] args) {
        // System.out.println(2147483647);
-        new Solution().mySqrt(2147483647);
+        //new Solution().mySqrt(2147483647);
     }
 }
 //leetcode submit region end(Prohibit modification and deletion)

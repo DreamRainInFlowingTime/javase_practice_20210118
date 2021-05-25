@@ -24,11 +24,32 @@
 // Related Topics 动态规划 
 // 👍 1663 👎 0
 
+package org.example.leetcode.editor.cn;
+
+import java.util.HashMap;
+import java.util.Map;
 
 //leetcode submit region begin(Prohibit modification and deletion)
-class Solution {
+class Solution16 {
+    Map map = new HashMap<Integer,Integer>();
     public int climbStairs(int n) {
         //翻车了，明天。，这tm就是easy么，i了
+        //这个时间复杂度是多少？我自己都不知道，100%，61%
+        if (n == 1){
+            return 1;
+        }else if (n == 2){
+            return 2;
+        }else if (map.containsKey(n)){
+            return (Integer)map.get(n);
+        } else {
+            map.put(n,climbStairs(n - 1) + climbStairs(n - 2));
+            return (Integer)map.get(n);
+        }
+    }
+
+    public static void main(String[] args) {
+        //System.out.println(new Solution().climbStairs(100));
     }
 }
+
 //leetcode submit region end(Prohibit modification and deletion)
