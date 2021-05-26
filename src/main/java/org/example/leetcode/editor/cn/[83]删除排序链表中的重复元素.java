@@ -42,7 +42,7 @@
  * ListNode(int val, ListNode next) { this.val = val; this.next = next; }
  * }
  */
-class Solution {
+class Solution17 {
     /**
      * 好像和答案一样？100,80，  空间还能优化不？这题的难度才是真的easy级吧ca，建议都是这种我一天能刷100道！
      * @param head
@@ -63,7 +63,7 @@ class Solution {
         return temp;
     }
 
-/*    public class ListNode {
+    public class ListNode {
         int val;
         ListNode next;
 
@@ -78,6 +78,6 @@ class Solution {
             this.val = val;
             this.next = next;
         }
-    }*/
+    }
 }
 //leetcode submit region end(Prohibit modification and deletion)
