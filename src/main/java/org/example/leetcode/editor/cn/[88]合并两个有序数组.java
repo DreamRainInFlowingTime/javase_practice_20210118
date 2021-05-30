@@ -34,25 +34,41 @@
 // 👍 960 👎 0
 
 
+import java.util.Arrays;
+
 //leetcode submit region begin(Prohibit modification and deletion)
-class Solution {
+class Solution18 {
+    //100% , 91%没啥优化的了，这内存是因为用例不同导致的？就多用了一个int变量怎么会只有91？
     public void merge(int[] nums1, int m, int[] nums2, int n) {
-        int nums1Index = m-1;
-        int nums2Index = n-1;
-        int lastIndex = m+n-1;
-        while (nums1Index > 0 && nums2Index > 0) {
-            if (nums1[nums1Index] > nums2[nums2Index]) {
-                nums1[lastIndex] = nums1[nums1Index];
-                nums1Index--;
-            }else{
-                nums1[lastIndex] = nums2[nums2Index];
-                nums2Index--;
+        int lastIndex = m + n - 1;
+        m = m - 1;
+        n = n - 1;
+        while (true) {
+            if (m == -1 || n == -1) break;
+            if (nums1[m] > nums2[n]) {
+                nums1[lastIndex] = nums1[m];
+                m = m-1;
+            } else {
+                nums1[lastIndex] = nums2[n];
+                n = n-1;
             }
             lastIndex--;
         }
-        if (nums1Index == 0){
-            System.arraycopy(nums2,0,nums1,0,nums2Index);
+        if (m == -1) {
+            for (int i = 0; i <= n; i++) {
+                nums1[i] = nums2[i];
+            }
         }
+
+        //if (nums1Index == -1) System.arraycopy(nums2, 0, nums1, 0, nums2Index + 1);
+    }
+
+    public static void main(String[] args) {
+        int[] nums1 = new int[]{4, 5, 6, 0, 0, 0};
+        int[] nums2 = new int[]{1, 2, 3};
+        new Solution().merge(nums1, 3, nums2, 3);
+        System.out.println(Arrays.toString(nums1));
     }
 }
+
 //leetcode submit region end(Prohibit modification and deletion)
