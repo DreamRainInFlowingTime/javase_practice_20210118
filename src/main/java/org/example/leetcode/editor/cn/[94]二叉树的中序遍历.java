@@ -77,7 +77,7 @@ import java.util.function.Function;
  * }
  * }
  */
-class Solution {
+class Solution19 {
     public List<Integer> inorderTraversal(TreeNode root) {
         List list = new ArrayList();
         if (root == null) return list;
@@ -90,7 +90,7 @@ class Solution {
         if (root.right != null) foreach(root.right,list);
     }
 
-/*    public class TreeNode {
+    public class TreeNode {
         int val;
         TreeNode left;
         TreeNode right;
@@ -107,6 +107,6 @@ class Solution {
             this.left = left;
             this.right = right;
         }
-    }*/
+    }
 }
 //leetcode submit region end(Prohibit modification and deletion)
