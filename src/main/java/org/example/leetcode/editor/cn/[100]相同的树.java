@@ -57,7 +57,7 @@ import java.util.List;
  * }
  * }
  */
-class Solution {
+class Solution20 {
     public boolean isSameTree(TreeNode p, TreeNode q) {
         if (p == q) return true;
         else if (p == null || q == null) return false;
@@ -82,7 +82,7 @@ class Solution {
 //???模拟的是false，测试是是true？我这个模拟有问题？[4,5,null,1,null,2,null,3],[5,4,null,1,null,2,null,3]
 
     public static void main(String[] args) {
-        TreeNode p = new Solution.TreeNode();
+/*        TreeNode p = new Solution.TreeNode();
         p.val = 4;
         p.left = new Solution.TreeNode(5);
         p.right = null;
@@ -99,7 +99,7 @@ class Solution {
         //p.left.right = null;
         p.left.left.left = new Solution.TreeNode(2);
         p.left.left.left.left = new Solution.TreeNode(3);
-        System.out.println(new Solution().isSameTree(p, q));
+        System.out.println(new Solution().isSameTree(p, q));*/
     }
 
 
