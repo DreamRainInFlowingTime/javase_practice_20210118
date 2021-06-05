@@ -1,4 +1,6 @@
 import java.awt.print.PrinterGraphics;
+import java.nio.charset.StandardCharsets;
+import java.util.Arrays;
 
 public class Main {
     public static void main(String[] args) {
@@ -7,6 +9,15 @@ public class Main {
         System.out.println(a);
         Integer integer = null;
         System.out.println(integer);
+        System.out.println("珊电动阀\r");
+         byte aa = 1;
+        //byte x = 2+aa;
+        int x = 12 & 1;
+        System.out.println(12 & 1);
+        byte by = -1;
+        System.out.println(by & 1);
+        char b = '珊';
+        System.out.println(Arrays.toString(new String[]{Character.toString(b)}));
     }
 
 

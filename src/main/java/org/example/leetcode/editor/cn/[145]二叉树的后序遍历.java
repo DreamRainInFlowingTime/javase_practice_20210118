@@ -36,7 +36,7 @@ import java.util.List;
  * }
  * }
  */
-class Solution {
+class Solution22 {
     List list = new ArrayList();
 
     public List<Integer> postorderTraversal(TreeNode root) {
@@ -46,23 +46,25 @@ class Solution {
         list.add(root.val);
         return list;
     }
+    //放里面了，不然要和其他类的TreeNode冲突了
+    class TreeNode {
+        int val;
+        TreeNode left;
+        TreeNode right;
+
+        TreeNode() {
+        }
+
+        TreeNode(int val) {
+            this.val = val;
+        }
+
+        TreeNode(int val, TreeNode left, TreeNode right) {
+            this.val = val;
+            this.left = left;
+            this.right = right;
+        }
 }
-class TreeNode {
-    int val;
-    TreeNode left;
-    TreeNode right;
 
-    TreeNode() {
-    }
-
-    TreeNode(int val) {
-        this.val = val;
-    }
-
-    TreeNode(int val, TreeNode left, TreeNode right) {
-        this.val = val;
-        this.left = left;
-        this.right = right;
-    }
 }
 //leetcode submit region end(Prohibit modification and deletion)
