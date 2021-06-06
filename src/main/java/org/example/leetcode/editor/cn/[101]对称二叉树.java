@@ -48,7 +48,7 @@
  * }
  * }
  */
-class Solution {
+class Solution23 {
     boolean flag = true;
     public boolean isSymmetric(TreeNode root) {
         return run(root,root);
@@ -58,24 +58,25 @@ class Solution {
         else if (treeB == null || treeA == null) return false;
         return treeA.val == treeB.val && run(treeA.left,treeB.right) && run(treeA.right,treeB.left);
     }
+    class TreeNode {
+        int val;
+        TreeNode left;
+        TreeNode right;
+
+        TreeNode() {
+        }
+
+        TreeNode(int val) {
+            this.val = val;
+        }
+
+        TreeNode(int val, TreeNode left, TreeNode right) {
+            this.val = val;
+            this.left = left;
+            this.right = right;
+        }
 }
 
-class TreeNode {
-    int val;
-    TreeNode left;
-    TreeNode right;
 
-    TreeNode() {
-    }
-
-    TreeNode(int val) {
-        this.val = val;
-    }
-
-    TreeNode(int val, TreeNode left, TreeNode right) {
-        this.val = val;
-        this.left = left;
-        this.right = right;
-    }
 }
 //leetcode submit region end(Prohibit modification and deletion)
