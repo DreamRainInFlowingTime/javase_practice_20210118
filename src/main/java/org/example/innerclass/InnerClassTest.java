@@ -1,5 +1,10 @@
 package org.example.innerclass;
 
+import org.example.interfacetest.USB;
+
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * 四种都试一下哈，顺便区分一下：
  *  成员内部类
@@ -12,27 +17,50 @@ public class InnerClassTest {
     int a = 1;
     String  b = "2";
     static int x = 1;
-
     /**
      * 成员内部类
      */
     class MemberInnerClass {
-        int a = 2;
-
          void test(){
              System.out.println(InnerClassTest.this.a+"");
              b = "3";
+             a = 4;
+             x = 2;
          }
 
     }
+    USB usb  = new USB(){
+
+        @Override
+        public void a() {
+            a = 2;
+        }
+
+        @Override
+        public void c() {
+
+        }
+    };
+
+
 
     /**
      * 方法内部类
      */
     void test(String p){
-        class MethodInnerClass {
+        int o = 7;
+        int c = 4;
+
+         class MethodInnerClass {
+             void a(){
+                 a = 6;
+                 b = "7";
+                 System.out.println(o);
+
+             }
 
         }
+
 
         /**
          * 匿名内部类
@@ -43,9 +71,11 @@ public class InnerClassTest {
                 a = 5;
                 b = "4";
                 b = "3";
+
+
                 System.out.println(InnerClassTest.this.b);
                 System.out.println(a);
-                System.out.println(p);
+                System.out.println(c);
 
             }
         };

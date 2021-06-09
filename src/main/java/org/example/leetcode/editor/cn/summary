@@ -2,4 +2,7 @@
     1、sb.insert倒拆的速度好像不如，正向插入然后再反转？然后内存占用也高？。
     2、对于数字的char处理Integer方法效率不如 - '0'
     3、相同的数，有点问题，在做几道树的题，在回来看
+
     4、二叉树最小深度，咋和答案想的结果不一样啊，tm是不是答案有问题啊
+    c，Just found out, the definition of leafnode is node with two empty child. So node with only one empty child is not leafnode.
+
