@@ -57,72 +57,34 @@ import java.util.List;
  * }
  * }
  */
-class Solution20 {
+class Solution {
     public boolean isSameTree(TreeNode p, TreeNode q) {
         if (p == q) return true;
-        else if (p == null || q == null) return false;
-        return foreach(p, q);
+        if (p == null || q == null) return false;
+        if (p.val == q.val) return isSameTree(p.left,q.left) && isSameTree(p.right,q.right);
+        return false;
+        //return foreach(p, q);
     }
 
-    boolean foreach(TreeNode p, TreeNode q) {
-        if (p.left != null && q.left != null) {
-            return foreach(p.left, q.left);
-        } else if (p.left == q.left) ;
-        else return false;
+}
+class TreeNode {
+    int val;
+    TreeNode left;
+    TreeNode right;
 
-        if (p.val != q.val) return false;
-
-        if (p.right != null && q.right != null) {
-            return foreach(p.right, q.right);
-        } else if (p.right == q.right) ;
-        else return false;
-
-        return true;
-    }
-//???模拟的是false，测试是是true？我这个模拟有问题？[4,5,null,1,null,2,null,3],[5,4,null,1,null,2,null,3]
-
-    public static void main(String[] args) {
-/*        TreeNode p = new Solution.TreeNode();
-        p.val = 4;
-        p.left = new Solution.TreeNode(5);
-        p.right = null;
-        p.left.left = new Solution.TreeNode(1);
-        //p.left.right = null;
-        p.left.left.left = new Solution.TreeNode(2);
-        //p.left.left.right = null;
-        p.left.left.left.left = new Solution.TreeNode(3);
-
-        TreeNode q = new Solution.TreeNode();
-        q.val = 5;
-        p.left = new Solution.TreeNode(4);
-        p.left.left = new Solution.TreeNode(1);
-        //p.left.right = null;
-        p.left.left.left = new Solution.TreeNode(2);
-        p.left.left.left.left = new Solution.TreeNode(3);
-        System.out.println(new Solution().isSameTree(p, q));*/
+    TreeNode() {
     }
 
+    TreeNode(int val) {
+        this.val = val;
+    }
 
-    static class TreeNode {
-        int val;
-        TreeNode left;
-        TreeNode right;
-
-        TreeNode() {
-        }
-
-        TreeNode(int val) {
-            this.val = val;
-        }
-
-        TreeNode(int val, TreeNode left, TreeNode right) {
-            this.val = val;
-            this.left = left;
-            this.right = right;
-        }
+    TreeNode(int val, TreeNode left, TreeNode right) {
+        this.val = val;
+        this.left = left;
+        this.right = right;
     }
 }
-
 
 
 
