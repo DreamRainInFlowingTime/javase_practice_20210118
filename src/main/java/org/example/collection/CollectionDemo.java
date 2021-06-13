@@ -33,5 +33,8 @@ public class CollectionDemo {
         //new ArrayList(new Integer[]{1,2,3});
 
         //new ArrayList(new int[]{1,2,3,4});
+        List<String> list4 = new ArrayList<String>();
+        List<?>  list3 = list4;
+        //list3.add("1");
     }
 }

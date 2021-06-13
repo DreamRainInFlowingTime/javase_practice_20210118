@@ -57,7 +57,7 @@ import java.util.List;
  * }
  * }
  */
-class Solution {
+class Solution29 {
     public boolean isSameTree(TreeNode p, TreeNode q) {
         if (p == q) return true;
         if (p == null || q == null) return false;
@@ -65,30 +65,25 @@ class Solution {
         return false;
         //return foreach(p, q);
     }
+    class TreeNode {
+        int val;
+        TreeNode left;
+        TreeNode right;
+
+        TreeNode() {
+        }
+
+        TreeNode(int val) {
+            this.val = val;
+        }
+
+        TreeNode(int val, TreeNode left, TreeNode right) {
+            this.val = val;
+            this.left = left;
+            this.right = right;
+        }
+    }
 
 }
-class TreeNode {
-    int val;
-    TreeNode left;
-    TreeNode right;
-
-    TreeNode() {
-    }
-
-    TreeNode(int val) {
-        this.val = val;
-    }
-
-    TreeNode(int val, TreeNode left, TreeNode right) {
-        this.val = val;
-        this.left = left;
-        this.right = right;
-    }
-}
-
-
-
-
-
 
 //leetcode submit region end(Prohibit modification and deletion)

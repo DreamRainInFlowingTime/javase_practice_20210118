@@ -1,5 +1,7 @@
 package org.example.collection;
 
+import java.util.List;
+
 public class GenericityDemo<A> implements GenericityInerface<A> {
 
     @Override
