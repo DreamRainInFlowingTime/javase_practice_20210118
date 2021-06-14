@@ -10,7 +10,9 @@ import java.util.List;
 public class CollectionDemo {
     public static void main(String[] args) {
         Collection collection = new ArrayList();
-        List list = new ArrayList();
+        List<Integer> list = new ArrayList();
+        System.out.println(list.remove("1"));
+        //list.add();
         //list.add()
         list.remove(new Integer(1));
         //System.out.println([1]);
@@ -26,6 +28,7 @@ public class CollectionDemo {
         //md可变数组是个坑，非引用数据类型，会存数组存引用
         List intsList = Arrays.asList(ints);
         List integersList = Arrays.asList(integers);
+
 
         //
         System.out.println(collection.getClass());
